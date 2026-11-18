@@ -1,0 +1,65 @@
+:root {
+  --brand: #4f46e5;
+  --brand-dark: #3730a3;
+}
+
+body {
+  background-color: #f4f6fb;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+  color: #fff !important;
+  border-bottom: 2px solid #fff;
+}
+
+.card-stat {
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.card-stat .stat-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.bg-grad-1 { background: linear-gradient(135deg,#4f46e5,#7c3aed); }
+.bg-grad-2 { background: linear-gradient(135deg,#0ea5e9,#0284c7); }
+.bg-grad-3 { background: linear-gradient(135deg,#16a34a,#15803d); }
+.bg-grad-4 { background: linear-gradient(135deg,#f59e0b,#d97706); }
+.bg-grad-5 { background: linear-gradient(135deg,#ef4444,#b91c1c); }
+
+.table-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 1.25rem;
+}
+
+.badge-status-Pending { background:#f59e0b; }
+.badge-status-Processing { background:#0ea5e9; }
+.badge-status-Shipped { background:#8b5cf6; }
+.badge-status-Delivered { background:#16a34a; }
+.badge-status-Cancelled { background:#ef4444; }
+
+.badge-pay-Pending { background:#f59e0b; }
+.badge-pay-Completed { background:#16a34a; }
+.badge-pay-Failed { background:#ef4444; }
+.badge-pay-Refunded { background:#6b7280; }
+
+.low-stock {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.page-title {
+  font-weight: 700;
+  color: #1f2937;
+}

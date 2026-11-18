@@ -1,0 +1,28 @@
+USE EcommerceDB;
+
+SELECT * FROM Customers;
+SELECT * FROM Products;
+SELECT * FROM Orders WHERE Status='Delivered';
+SELECT ProductName, Price FROM Products WHERE Price>5000;
+SELECT * FROM Products WHERE Stock<20;
+SELECT * FROM Customers WHERE City='Delhi';
+SELECT ProductName,Price FROM Products ORDER BY Price DESC LIMIT 5;
+SELECT ProductName,Price FROM Products ORDER BY Price LIMIT 5;
+SELECT COUNT(*) AS TotalCustomers FROM Customers;
+SELECT COUNT(*) AS TotalProducts FROM Products;
+SELECT AVG(Price) AS AveragePrice FROM Products;
+SELECT MAX(Price) AS HighestPrice FROM Products;
+SELECT MIN(Price) AS LowestPrice FROM Products;
+SELECT SUM(AvailableStock) FROM Inventory;
+SELECT CategoryID, COUNT(*) AS Products FROM Products GROUP BY CategoryID;
+SELECT Status, SUM(TotalAmount) FROM Orders GROUP BY Status;
+SELECT CustomerID, COUNT(*) AS Orders FROM Orders GROUP BY CustomerID;
+SELECT CustomerID, COUNT(*) AS TotalOrders FROM Orders GROUP BY CustomerID HAVING COUNT(*)>1;
+SELECT o.OrderID, c.FirstName, c.LastName, o.OrderDate, o.Status, o.TotalAmount FROM Orders o INNER JOIN Customers c ON o.CustomerID=c.CustomerID;
+SELECT p.ProductName, s.SupplierName FROM Products p INNER JOIN Suppliers s ON p.SupplierID=s.SupplierID;
+SELECT o.OrderID, p.PaymentMethod, p.PaymentStatus, p.Amount FROM Orders o INNER JOIN Payments p ON o.OrderID=p.OrderID;
+SELECT c.CustomerID, c.FirstName,  c.LastName FROM Customers c LEFT JOIN Orders o ON c.CustomerID=o.CustomerID WHERE o.OrderID IS NULL;
+SELECT ProductName, Price FROM Products WHERE Price>( SELECT AVG(Price) FROM Products );
+SELECT CustomerID, SUM(TotalAmount) FROM Orders GROUP BY CustomerID ORDER BY SUM(TotalAmount) DESC LIMIT 1;
+UPDATE Products SET Price=Price*1.10 WHERE CategoryID=1;
+DELETE FROM Orders WHERE Status='Cancelled';
